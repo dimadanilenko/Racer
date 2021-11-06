@@ -54,15 +54,42 @@ trafikSpeed = 4
 lose = 0
 scoreSpeed = 1
 over = False
+
+oneRan = randint(50, 130)
+twoRan = randint(150,200)
+threeRan = randint(260,315)
+fourran = randint(360, 410)
+
+
+
+
+    
+
  
 while 1:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exit()
     
-    
+    rant = randint(1, 2)
     key = pygame.key.get_pressed()
+
+    if True:
         
+        if rant == 1:
+            onetr = oneRan
+            twotr = twoRan
+            thretr = threeRan
+            fourtr = fourran
+
+        if rant == 2:
+            onetr = fourran
+            twotr = threeRan
+            thretr = twoRan
+            fourtr = oneRan
+
+        
+
     if key[K_LEFT]:
         if playerCarPlace.x > 50 :    
             playerCarPlace.x -= speed
@@ -77,25 +104,25 @@ while 1:
         trafikCarPlace.y += trafikSpeed
         if trafikCarPlace.y > 500:
             trafikCarPlace.y = 0
-            trafikCarPlace.x = randint(50, 130)   
+            trafikCarPlace.x = onetr   
     
     if True:    
         twotrafikCarPlace.y += trafikSpeed
         if twotrafikCarPlace.y > 500:
             twotrafikCarPlace.y = -10
-            twotrafikCarPlace.x = randint(150,200)
+            twotrafikCarPlace.x = twotr
 
     if True:
         threetrafikCarPlace.y += trafikSpeed                 
         if threetrafikCarPlace.y > 500:
             threetrafikCarPlace.y = -10
-            threetrafikCarPlace.x = randint(260,315)
+            threetrafikCarPlace.x = thretr
 
     if True:
         fourtrafikCarPlace.y += trafikSpeed
         if fourtrafikCarPlace.y > 500:
             fourtrafikCarPlace.y = -10
-            fourtrafikCarPlace.x = randint(360, 410)
+            fourtrafikCarPlace.x = fourtr
                     
 
     if True:
